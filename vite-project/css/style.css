@@ -13,6 +13,7 @@ body,
   --primary:#AFCBFF;
 }
 
-#app{
+#body{
   background-color: var(--primary);
+  
 }
