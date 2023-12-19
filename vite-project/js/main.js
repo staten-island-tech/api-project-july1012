@@ -7,6 +7,6 @@ async function data(url) {
   console.log(results);
   return results.json;
 }
-data();
+data(url);
 
 
