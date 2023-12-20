@@ -9,4 +9,14 @@ async function data(url) {
 }
 data(url);
 
+const DOMSelectors = {
+  header: document.querySelector(".header"),
+  form: document.querySelector("#form"),
+  brand:document.querySelector("#brand"),
+  product: document.querySelector("#product"),
+  btn: document.querySelector(".btn"),
+};
+
+
+
 

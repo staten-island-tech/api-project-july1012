@@ -4,8 +4,10 @@ body,
   box-sizing: border-box;
     font-size: 20px;
     padding: 0;
-    margin: 0;
+    margin: 15px;
     font-family:Georgia, 'Times New Roman', Times, serif;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 :root{
@@ -16,4 +18,17 @@ body,
 #body{
   background-color: var(--primary);
   
+}
+
+.header{
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.btn{
+  padding: 10px;
+  align-items: center;
+  justify-content: space-evenly;
 }
