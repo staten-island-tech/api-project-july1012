@@ -14,9 +14,18 @@ const DOMSelectors = {
   form: document.querySelector("#form"),
   brand:document.querySelector("#brand"),
   product: document.querySelector("#product"),
-  btn: document.querySelector(".btn"),
+  ten: document.querySelector(".ten"),
+  twenty: document.querySelector(".twenty"),
+  fifty: document.querySelector(".fifty"),
 };
 
+let prices = [DOMSelectors.ten, DOMSelectors.twenty, DOMSelectors.fifty]
+
+prices.forEach((btn)=> btn.addEventListener("click",function(){
+  const money = btn.textContent;
+  console.log(money);
+  
+}))
 
 
 

@@ -27,8 +27,18 @@ body,
   justify-content: space-evenly;
 }
 
-.btn{
-  padding: 10px;
+.ten{
+  padding: 20px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.twenty{
+  padding: 20px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.fifty{
+  padding: 20px;
   align-items: center;
   justify-content: space-evenly;
 }
