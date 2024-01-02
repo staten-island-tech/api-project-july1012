@@ -2,24 +2,71 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
     <title>makeup</title>
   </head>
   <body >
     <h1 class="header">Fulta</h1>
       <form id="form">
-        <label for="brand" class="lbl">Brand Name</label>
-        <input type="text" id="brand" class="textbox"/>
-        <label for="product" class="lbl">Product type</label>
-        <input type="text" id="product" class="textbox"/>
-        <input type="submit"  class="submitbutton" name="submit" value="search"/>
+        <div>
+          <input type="checkbox" id="blush" name="type" value="blush"/>
+          <label for="blush">Blush</label>
+        </div>
+        <div>
+          <input type="checkbox" id="bronzer" name="type" value="bronzer"/>
+          <label for="bronzer">Bronzer</label>
+        </div>
+        <div>
+          <input type="checkbox" id="eyebrow" name="type" value="eyebrow"/>
+          <label for="eyebrow">Eyebrow</label>
+        </div>
+        <div>
+          <input type="checkbox" id="eyeliner" name="type" value="eyeliner"/>
+          <label for="eyeliner">Eyeliner</label>
+        </div>
+        <div>
+          <input type="checkbox" id="eyeshadow" name="type" value="eyeshadow"/>
+          <label for="eyeshadow">Eyeshadow</label>
+        </div>
+        <div>
+          <input type="checkbox" id="foundation" name="type" value="foundation"/>
+          <label for="foundation">Foundation</label>
+        </div>
+        <div>
+          <input type="checkbox" id="lipliner" name="type" value="lipliner"/>
+          <label for="lipliner">Lipliner</label>
+        </div>
+        <div>
+          <input type="checkbox" id="lipstick" name="type" value="lipstick"/>
+          <label for="lipstick">Lipstick</label>
+        </div>
+        <div>
+          <input type="checkbox" id="mascara" name="type" value="mascara"/>
+          <label for="mascara">Mascara</label>
+        </div>
+        <div>
+          <input type="checkbox" id="nail_polish" name="type" value="nailpolish"/>
+          <label for="nail_polish">Nail Polish</label>
+        </div>
+        <button type="submit"  class="submitbutton" name="submit" value="submit">Submit</button>
       </form>
-      <button class="ten">$0 - $10</button>
-      <button class="twenty">$10 - $25</button>
-      <button class="fifty">$25 - $50</button>
-      <h4 class="info">If you have any questions or would like to book an appointment call (929) 492-9282</h4>
+      <button id="checkAll">Check All</button>
 
     <script type="module" src="./js/main.js"></script>
   </body>
 </html>
 
+
+
+
+
+<!-- <form id="form">
+        <label for="brand" class="lbl">Brand Name</label>
+        <input type="search" id="brand" class="textbox"/>
+        <label for="product" class="lbl">Product type</label>
+        <input type="search" id="product" class="textbox"/>
+        <input type="submit"  class="submitbutton" name="submit" value="search"/>
+      </form>
+      <button class="ten">$0 - $10</button>
+      <button class="twenty">$10 - $25</button>
+      <button class="fifty">$25 - $50</button> -->
