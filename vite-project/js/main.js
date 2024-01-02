@@ -69,12 +69,3 @@ DOMSelectors.checkAll.addEventListener("click", function (event) {
     console.log("Error checking all");
   }
 });
-//
-
-// let prices = [DOMSelectors.ten, DOMSelectors.twenty, DOMSelectors.fifty];
-// prices.forEach((btn) =>
-//   btn.addEventListener("click", function () {
-//     const money = btn.textContent;
-//     console.log(money);
-//   })
-// );
