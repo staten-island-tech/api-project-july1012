@@ -5,7 +5,7 @@ const url = "http://makeup-api.herokuapp.com/api/v1/products.json";
 async function data(url) {
   try {
     const response = await fetch(url);
-    dataa = await response.json();
+    const dataa = await response.json();
     console.log(dataa);
   } catch (error) {
     console.log(error);
@@ -16,6 +16,9 @@ async function data(url) {
   // return results.json;
 }
 data(url);
+
+
+
 
 const DOMSelectors = {
   header: document.querySelector(".header"),
