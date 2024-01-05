@@ -6,7 +6,6 @@ async function data(url) {
   try {
     const response = await fetch(url);
     const dataa = await response.json();
-    console.log(dataa);
     insert(dataa);
   } catch (error) {
     console.log(error);
@@ -23,16 +22,16 @@ const DOMSelectors = {
 };
 
 function insert(cards) {
-  const top_items = cards.sort((a, b) => a.price - b.price).splice(3);
+  const top_items = cards.sort((a, b) => a.price - b.price).splice(928);
+  console.log(top_items);
   top_items.forEach((item) => {
     DOMSelectors.cardsholder.insertAdjacentHTML(
       "beforeend",
       `<div class="cards">
-      <h2 class="rating">${item.rating}</h2>
-       <h2 class="companyname">${item.brand}</h2>
+       <h2 class="companyname">${item.brand}:</h2>
       <h3 class="title">${item.name}</h3>
       <img src= "${item.api_featured_image}" class="pic">
-     <h4 class="desc">${item.tag_list}</h4>
+     <h4 class="desc">$${item.price}</h4>
       </div>
        `
     );
@@ -56,7 +55,19 @@ DOMSelectors.form.addEventListener("submit", function (event) {
     random = Math.floor(Math.random() * newtype.length);
     bundle.push(newtype[random]);
   });
-  console.log("bundle", bundle);
+  console.log("bundle", bundle[random]);
+  // bundle.forEach((basket) => {
+  //   DOMSelectors.cardsholder.insertAdjacentHTML(
+  //     "beforeend",
+  //     `<div class="cards">
+  //      <h2 class="companyname">${basket.brand}:</h2>
+  //     <h3 class="title">${basket.name}</h3>
+  //     <img src= "${basket.api_featured_image}" class="pic">
+  //    <h4 class="desc">${basket.tag_list}</h4>
+  //     </div>
+  //      `
+  //   );
+  // });
 });
 
 //check all and uncheck all button

@@ -12,12 +12,8 @@ body,
 
 :root{
   --black: #000;
-  --primary:#AFCBFF;
-}
-
-#body{
-  background-color: var(--primary);
-  
+  --primary:#F2B7C6;
+  --shadow:#B8336A;
 }
 
 .header{
@@ -27,18 +23,38 @@ body,
   justify-content: space-evenly;
 }
 
-.ten{
-  padding: 20px;
-  align-items: center;
-  justify-content: space-evenly;
+#cardsholder{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100vw;
+  margin:-17rem;
+  padding:18rem;
 }
-.twenty{
-  padding: 20px;
-  align-items: center;
-  justify-content: space-evenly;
+.cards{
+  width: 20rem;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 30px;
+    margin: 5rem;
+    background-color: var(--primary);
+    box-shadow: 10px 10px 5px 8px var(--shadow);
+    position: relative;
+    transition:0.7s;
 }
-.fifty{
-  padding: 20px;
-  align-items: center;
-  justify-content: space-evenly;
+
+.cards:hover{
+  transform: translateY(-8px);
+}
+
+.pic{
+  width: 175px;
+  height: auto;
+}
+
+.desc{
+  font-size: 20px;
 }
