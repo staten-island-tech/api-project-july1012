@@ -7,32 +7,37 @@ async function data(url) {
     const response = await fetch(url);
     const dataa = await response.json();
     console.log(dataa);
+    insert(dataa);
   } catch (error) {
     console.log(error);
   }
-
-  // let results = await response.json();
-  // console.log(results);
-  // return results.json;
 }
 data(url);
-
-
-
 
 const DOMSelectors = {
   header: document.querySelector(".header"),
   form: document.querySelector("#form"),
   types: document.querySelectorAll('input[name="type"]'),
   checkAll: document.querySelector("#checkAll"),
-  // brand: document.querySelector("#brand"),
-  // product: document.querySelector("#product"),
-  // ten: document.querySelector(".ten"),
-  // twenty: document.querySelector(".twenty"),
-  // fifty: document.querySelector(".fifty"),
+  cardsholder: document.querySelector("#cards-holder"),
 };
 
-let checkAll = false;
+function insert(cards) {
+  const top_items = cards.sort((a, b) => a.price - b.price).splice(3);
+  top_items.forEach((item) => {
+    DOMSelectors.cardsholder.insertAdjacentHTML(
+      "beforeend",
+      `<div class="cards">
+      <h2 class="rating">${item.rating}</h2>
+       <h2 class="companyname">${item.brand}</h2>
+      <h3 class="title">${item.name}</h3>
+      <img src= "${item.api_featured_image}" class="pic">
+     <h4 class="desc">${item.tag_list}</h4>
+      </div>
+       `
+    );
+  });
+}
 
 DOMSelectors.form.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -43,7 +48,7 @@ DOMSelectors.form.addEventListener("submit", function (event) {
 
   type.forEach((twaipe) => tipuhs.push(twaipe.id));
 
-  //randomize selections
+  //randomize selections of products
   tipuhs.forEach(function (type) {
     console.log(type);
     let newtype = dataa.filter((makeup) => makeup.product_type === type);
@@ -54,6 +59,8 @@ DOMSelectors.form.addEventListener("submit", function (event) {
   console.log("bundle", bundle);
 });
 
+//check all and uncheck all button
+let checkAll = false;
 DOMSelectors.checkAll.addEventListener("click", function (event) {
   event.preventDefault();
   if (checkAll === false) {
