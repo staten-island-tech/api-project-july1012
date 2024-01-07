@@ -40,7 +40,13 @@ function insert(cards) {
     );
   });
 }
-
+// ummm maybe not :(( ????? its def working...
+function clearfields() {
+  DOMSelectors.brand.value = "";
+  DOMSelectors.name.value = "";
+  DOMSelectors.api_featured_image.value = "";
+  DOMSelectors.price.value = "";
+}
 function getData(dataa) {
   DOMSelectors.form.addEventListener("submit", function (event) {
     event.preventDefault();
