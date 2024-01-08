@@ -5,13 +5,17 @@
    
     <title>makeup</title>
   </head>
-  <body >
-    <h1 class="header">Fulta</h1>
-    <h2 class="subheader">here are a few customer favorite products/ most bougie !</h2>
-    <div id="cards-holder"></div>
-    <h2 class="formintro">Now you can check which types of fake-up you would like to include in your very own makeup bundle!!</h2>
+  <body class="app">
+    <div role="HEADING">
+      <h1 tabindex="0" class="header">Fulta</h1>
+      <h2 tabindex="1" class="subheader">Welcome to Fulta, with the best of the best makeup there is! 
+    </div>
+  <div role="BODY">
+    <h2 tabindex="0" class="subheader"> here are a few customer favorite products/ most bougie !</h2>
+    <div tabindex="1" id="cards-holder"></div>
+    <h2 tabindex="2" class="formintro">Now you can check which types of makeup you would like to include in your very own makeup bundle!!</h2>
     
-      <form id="form">
+      <form tabindex=3 id="form">
         <div>
           <input type="checkbox" id="blush" name="type" value="blush"/>
           <label for="blush">Blush</label>
@@ -54,8 +58,15 @@
         </div>
         <button type="submit"  class="submitbutton" name="submit" value="submit">Submit</button>
       </form>
-      <button id="checkAll">Check All</button>
-      <div id="formanswer"></div>
+      <div tabindex="4">
+        <button id="checkAll">Check All</button>
+        <button id="clear">Clear</button>
+        <h2 id="bundleHeader"></h2>
+        <div id="formanswer"></div>
+      </div>
+      
+  </div>
+  
 
     <script type="module" src="./js/main.js"></script>
   </body>

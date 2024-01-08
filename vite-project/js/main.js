@@ -22,35 +22,40 @@ const DOMSelectors = {
   checkAll: document.querySelector("#checkAll"),
   cardsholder: document.querySelector("#cards-holder"),
   formanswer: document.querySelector("#formanswer"),
+  clear: document.querySelector("#clear"),
+  bundleHeader: document.querySelector("#bundleHeader"),
 };
+let bundle = [];
 
+DOMSelectors.clear.addEventListener("click", function (event) {
+  event.preventDefault;
+  bundle = [];
+  DOMSelectors.formanswer.innerHTML = "";
+});
+function inject(products, product) {
+  products.insertAdjacentHTML(
+    "beforeend",
+    `<div class="cards">
+     <h2 class="companyname">${product.brand}:</h2>
+    <h3 class="title">${product.name}</h3>
+    <img src= "${product.api_featured_image}" alt="${product.name}" class="pic">
+   <h4 class="desc">$${product.price}</h4>
+    </div>
+     `
+  );
+}
 function insert(cards) {
   const top_items = cards.sort((a, b) => a.price - b.price).splice(928);
   console.log(top_items);
   top_items.forEach((item) => {
-    DOMSelectors.cardsholder.insertAdjacentHTML(
-      "beforeend",
-      `<div class="cards">
-       <h2 class="companyname">${item.brand}:</h2>
-      <h3 class="title">${item.name}</h3>
-      <img src= "${item.api_featured_image}" class="pic">
-     <h4 class="desc">$${item.price}</h4>
-      </div>
-       `
-    );
+    inject(DOMSelectors.cardsholder, item);
   });
 }
-// ummm maybe not :(( ????? its def working...
-function clearfields() {
-  DOMSelectors.brand.value = "";
-  DOMSelectors.name.value = "";
-  DOMSelectors.api_featured_image.value = "";
-  DOMSelectors.price.value = "";
-}
+
 function getData(dataa) {
   DOMSelectors.form.addEventListener("submit", function (event) {
     event.preventDefault();
-    let bundle = [];
+    bundle = [];
     let type = document.querySelectorAll('input[name="type"]:checked');
     let tipuhs = [];
     let random = "";
@@ -67,17 +72,10 @@ function getData(dataa) {
       bundle.push(newtype[random]);
     });
     console.log("bundle", bundle);
-    bundle.forEach((basket) => {
-      DOMSelectors.formanswer.insertAdjacentHTML(
-        "beforeend",
-        `<div class="cards">
-       <h2 class="companyname">${basket.brand}:</h2>
-      <h3 class="title">${basket.name}</h3>
-      <img src= "${basket.api_featured_image}" class="pic">
-     <h4 class="desc">$${basket.price}</h4>
-      </div>
-       `
-      );
+    DOMSelectors.bundleHeader.innerHTML =
+      "Here is your personalized makeup bundle!";
+    bundle.forEach((item) => {
+      inject(DOMSelectors.formanswer, item);
     });
   });
 }
