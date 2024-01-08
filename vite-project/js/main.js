@@ -1,7 +1,7 @@
 import "../css/style.css";
 let dataa = [];
 
-const url = "http://makeup-api.herokuapp.com/api/v1/products.json";
+const url = "https://makeup-api.herokuapp.com/api/v1/products.json";
 async function data(url) {
   try {
     const response = await fetch(url);
