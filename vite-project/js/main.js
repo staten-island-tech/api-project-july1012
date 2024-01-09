@@ -24,6 +24,7 @@ const DOMSelectors = {
   formanswer: document.querySelector("#formanswer"),
   clear: document.querySelector("#clear"),
   bundleHeader: document.querySelector("#bundleHeader"),
+  chckbx: document.querySelector(".chckbx"),
 };
 let bundle = [];
 
@@ -52,6 +53,8 @@ function insert(cards) {
   });
 }
 
+let newURL = `https://makeup-api.herokuapp.com/api/v1/products.json&product_type= ${x}`
+
 function getData(dataa) {
   DOMSelectors.form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -64,6 +67,7 @@ function getData(dataa) {
 
     //randomize selections of products
     tipuhs.forEach(function (type) {
+      
       console.log(type);
       dataa.forEach((makeup) => console.log(makeup));
       let newtype = dataa.filter((makeup) => makeup.product_type === type);
