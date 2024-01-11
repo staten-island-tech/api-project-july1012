@@ -66,7 +66,7 @@ function getData(dataa) {
     //randomize selections of products
     tipuhs.forEach(function (type) {
       console.log(type);
-      dataa.forEach((makeup) => console.log(makeup));
+    
       let x = dataa.filter((makeup) => makeup.product_type === type);
       let newURL = `https://makeup-api.herokuapp.com/api/v1/products.json&product_type= ${x}`;
       // console.log('Filtered Data:', newtype);
