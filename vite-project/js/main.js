@@ -53,8 +53,6 @@ function insert(cards) {
   });
 }
 
-let newURL = `https://makeup-api.herokuapp.com/api/v1/products.json&product_type= ${x}`
-
 function getData(dataa) {
   DOMSelectors.form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -67,13 +65,13 @@ function getData(dataa) {
 
     //randomize selections of products
     tipuhs.forEach(function (type) {
-      
       console.log(type);
       dataa.forEach((makeup) => console.log(makeup));
-      let newtype = dataa.filter((makeup) => makeup.product_type === type);
+      let x = dataa.filter((makeup) => makeup.product_type === type);
+      let newURL = `https://makeup-api.herokuapp.com/api/v1/products.json&product_type= ${x}`;
       // console.log('Filtered Data:', newtype);
-      random = Math.floor(Math.random() * newtype.length);
-      bundle.push(newtype[random]);
+      random = Math.floor(Math.random() * x.length);
+      bundle.push(x[random]);
     });
     console.log("bundle", bundle);
     DOMSelectors.bundleHeader.innerHTML =
@@ -88,6 +86,7 @@ function getData(dataa) {
 let checkAll = false;
 DOMSelectors.checkAll.addEventListener("click", function (event) {
   event.preventDefault();
+  console.log("checked");
   if (checkAll === false) {
     DOMSelectors.types.forEach((checkbox) => {
       checkbox.checked = true;
